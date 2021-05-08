@@ -46,21 +46,126 @@ const data = {
 };
 
 const filters = {
-  "crown-pic1": require("./assets/crown-pic1.png"),
-  "crown-pic2": require("./assets/crown-pic2.png"),
-  "crown-pic3": require("./assets/crown-pic3.png"),
-  "flower-pic1": require("./assets/flower-pic1.png"),
-  "flower-pic2": require("./assets/flower-pic2.png"),
-  "flower-pic3": require("./assets/flower-pic3.png"),
-  "hair-pic1": require("./assets/hair-pic1.png"),
-  "hair-pic2": require("./assets/hair-pic2.png"),
-  "hair-pic3": require("./assets/hair-pic3.png"),
-  "hair-pic4": require("./assets/hair-pic4.png"),
-  "hat-pic1": require("./assets/hat-pic1.png"),
-  "hat-pic2": require("./assets/hat-pic2.png"),
-  "other-pic1": require("./assets/other-pic1.png"),
-  "other-pic2": require("./assets/other-pic2.png"),
-  "other-pic3": require("./assets/other-pic3.png")
+  "crown-pic1": {
+    src: require("./assets/crown-pic1.png"),
+    width: 3.5,
+    height: 0.7,
+    left: 0.46,
+    right: 0.15,
+    top: 1.5
+  },
+  "crown-pic2": {
+    src: require("./assets/crown-pic2.png"),
+    width: 3.5,
+    height: 1.2,
+    left: 0.46,
+    right: 0.15,
+    top: 0.7
+  },
+  "crown-pic3": {
+    src: require("./assets/crown-pic3.png"),
+    width: 2,
+    height: 0.6,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "flower-pic1": {
+    src: require("./assets/flower-pic1.png"),
+    width: 1.5,
+    height: 0.55,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "flower-pic2": {
+    src: require("./assets/flower-pic2.png"),
+    width: 1.2,
+    height: 0.55,
+    left: 0.36,
+    right: 0.15,
+    top: 1.3
+  },
+  "flower-pic3": {
+    src: require("./assets/flower-pic3.png"),
+    width: 5,
+    height: 0.8,
+    left: 0.46,
+    right: 0.15,
+    top: 1.4
+  },
+  "hair-pic1": {
+    src: require("./assets/hair-pic1.png"),
+    width: 1.5,
+    height: 0.6,
+    left: 0.4,
+    right: 0.5,
+    top: 1.5
+  },
+  "hair-pic2": {
+    src: require("./assets/hair-pic2.png"),
+    width: 4.5,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "hair-pic3": {
+    src: require("./assets/hair-pic3.png"),
+    width: 3.5,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "hair-pic4": {
+    src: require("./assets/hair-pic4.png"),
+    width: 3.5,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "hat-pic1": {
+    src: require("./assets/hat-pic1.png"),
+    width: 1,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "hat-pic2": {
+    src: require("./assets/hat-pic2.png"),
+    width: 3.5,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "other-pic1": {
+    src: require("./assets/other-pic1.png"),
+    width: 3.5,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "other-pic2": {
+    src: require("./assets/other-pic2.png"),
+    width: 3.5,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  },
+  "other-pic3": {
+    src: require("./assets/other-pic3.png"),
+    width: 3.5,
+    height: 0.65,
+    left: 0.36,
+    right: 0.15,
+    top: 1.5
+  }
 };
 
 export default class App extends Component {
@@ -122,9 +227,14 @@ export default class App extends Component {
           />
           {this.state.faces.map(face => (
             <Filter
-              key={face.faceID}
+              key={`face-id-${face.faceID}`}
               face={face}
-              source={filters[this.state.current_filter]}
+              source={filters[this.state.current_filter].src}
+              width={filters[this.state.current_filter].width}
+              height={filters[this.state.current_filter].height}
+              left={filters[this.state.current_filter].left}
+              right={filters[this.state.current_filter].right}
+              top={filters[this.state.current_filter].top}
             />
           ))}
         </View>

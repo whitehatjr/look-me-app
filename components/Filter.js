@@ -10,10 +10,15 @@ const Filter = ({
     rightEyePosition,
     noseBasePosition
   },
-  source
+  source,
+  width,
+  height,
+  left,
+  right,
+  top
 }) => {
-  const glassesWidth = faceWidth * 3.5;
-  const glassesHeight = faceHeight * 0.65;
+  const filterWidth = faceWidth * width;
+  const filterHeight = faceHeight * height;
 
   const transformAngle = (
     angleRad = Math.atan(
@@ -26,16 +31,16 @@ const Filter = ({
     <View
       style={{
         position: "absolute",
-        left: leftEyePosition.x - glassesWidth * 0.45,
-        right: rightEyePosition.x - glassesWidth * 0.45,
-        top: noseBasePosition.y - glassesHeight * 1.5
+        left: leftEyePosition.x - filterWidth * left,
+        right: rightEyePosition.x - filterWidth * right,
+        top: noseBasePosition.y - filterHeight * top
       }}
     >
       <Image
         source={source}
         style={{
-          width: glassesWidth,
-          height: glassesHeight,
+          width: filterWidth,
+          height: filterHeight,
           resizeMode: "contain",
           transform: [{ rotate: `${transformAngle()}deg` }]
         }}
