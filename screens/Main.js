@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { Camera } from "expo-camera";
 import * as FaceDetector from "expo-face-detector";
-import * as Permissions from "expo-permissions";
+
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 import Filter from "../components/Filter";
@@ -319,12 +319,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
-  lowerBottomContainer: {
-    flex: 0.7,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#EFE7BC"
-  },
   categories: {
     justifyContent: "space-between",
     alignItems: "center",
@@ -338,6 +332,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: RFValue(5),
     borderWidth: 2
+  },
+  lowerBottomContainer: {
+    flex: 0.7,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#EFE7BC"
   },
   filters: {
     flexDirection: "row",
